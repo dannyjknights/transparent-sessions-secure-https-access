@@ -57,6 +57,6 @@ variable "ni_tags" {
   }
 }
 
-variable "vault_addr" {
-  type = string
-}
+# variable "vault_addr" {
+#   type = string
+# }

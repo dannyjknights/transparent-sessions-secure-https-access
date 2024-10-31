@@ -25,6 +25,8 @@ resource "boundary_host_static" "ubuntu_private_linux" {
   host_catalog_id = boundary_host_catalog_static.aws_compute.id
 }
 
+
+
 resource "boundary_target" "ubuntu_linux_private" {
   type                     = "tcp"
   name                     = "ubuntu-private-linux"
@@ -47,4 +49,3 @@ resource "boundary_alias_target" "ts_alias_target" {
   destination_id            = boundary_target.ubuntu_linux_private.id
   authorize_session_host_id = boundary_host_static.ubuntu_private_linux.id
 }
-

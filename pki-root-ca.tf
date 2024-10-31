@@ -37,6 +37,6 @@ resource "vault_pki_secret_backend_role" "pki_role" {
 
 resource "vault_pki_secret_backend_config_urls" "pki_urls" {
   backend                 = vault_mount.pki_root.path
-  issuing_certificates    = ["${var.vault_addr}/v1/pki/ca"]
-  crl_distribution_points = ["${var.vault_addr}/v1/pki/crl"]
+  issuing_certificates    = ["${hcp_vault_cluster.pki_vault.vault_public_endpoint_url}/v1/pki/ca"]
+  crl_distribution_points = ["${hcp_vault_cluster.pki_vault.vault_public_endpoint_url}/v1/pki/crl"]
 }
